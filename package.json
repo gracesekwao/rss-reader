@@ -1,0 +1,23 @@
+{
+  "name": "rss-reader",
+  "version": "1.0.0",
+  "description": "RSS parser for a feed at Acast",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20",
+    "nodemon": "^2.0.7",
+    "paginate-info": "^1.0.4",
+    "rss-parser": "^3.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Grace Sekwao",
+  "license": "ISC"
+}
