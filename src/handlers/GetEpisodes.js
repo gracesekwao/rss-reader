@@ -13,7 +13,6 @@ module.exports = async () => {
             const episodeObj = {};
             episodeObj.title = _.get(item, 'title', '');
             episodeObj.url= _.get(item, 'link', '');
-            console.log(checkSumGenerator())
             const enclosureUrl = _.get(item, 'enclosure.url');
             episodeObj.checkSum = enclosureUrl ? checkSumGenerator(enclosureUrl) : null;
             return episodeObj;

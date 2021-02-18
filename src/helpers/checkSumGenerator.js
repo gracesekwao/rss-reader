@@ -5,20 +5,12 @@ const axios = require('axios');
 
 const { errorResponse, CustomError } = require('../helpers/errorHelper');
 
-const checkSumGenerator = async (url) => {
-  console.log(url)
+const checkSumGenerator = async(url) => {
   try {
-    axios({
-      method: 'head',
-      url,
-    })
-      .then(function (response) {
-        const headers = response.headers;
-        const checksum = _.get(headers, 'content-md5', '');
-        return checksum
-      });
+    const headers = await axios.head(url);
+    return _.get(headers, 'headers.content-MD5', '');
     
-  } catch (err) {
+  } catch (error) {
       const customError = new CustomError({
         message: 'Failed to get checksum',
         status: error.status,
