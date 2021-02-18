@@ -4,7 +4,6 @@ const _ = require('lodash');
 const { getFeed } = require('../requests/acastRequest');
 const {  errorResponse, CustomError } = require('../helpers/errorHelper');
 const { checkSumGenerator } = require('../helpers/checkSumGenerator');
-//const { checkSumGenerator } = require('../helpers/checkSumGenerator');
 
 module.exports = async () => {
     

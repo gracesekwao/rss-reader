@@ -4,7 +4,7 @@ The purpose of this application is to extract data from an RSS feed and expose i
 
 # Endpoints
 
-GET /episodes using the port 3000
+GET /episodes using the port 3000 locally and port 8000 in Docker
 
 # How to run locally
 run the command npm run start
