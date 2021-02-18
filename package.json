@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "chai": "^4.3.0",
     "express": "^4.17.1",
     "lodash": "^4.17.20",
     "nodemon": "^2.0.7",
@@ -16,7 +17,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test-unit",
+    "test-unit": "NODE_ENV=test mocha tests/unit/",
     "start": "node index.js"
   },
   "author": "Grace Sekwao",
