@@ -4,6 +4,7 @@ const _ = require('lodash');
 const { getFeed } = require('../requests/acastRequest');
 const {  errorResponse, CustomError } = require('../helpers/errorHelper');
 const { checkSumGenerator } = require('../helpers/checkSumGenerator');
+//const { checkSumGenerator } = require('../helpers/checkSumGenerator');
 
 module.exports = async () => {
     
@@ -13,6 +14,7 @@ module.exports = async () => {
             const episodeObj = {};
             episodeObj.title = _.get(item, 'title', '');
             episodeObj.url= _.get(item, 'link', '');
+            console.log(checkSumGenerator())
             const enclosureUrl = _.get(item, 'enclosure.url');
             episodeObj.checkSum = enclosureUrl ? checkSumGenerator(enclosureUrl) : null;
             return episodeObj;

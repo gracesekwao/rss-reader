@@ -19,6 +19,7 @@ class CustomError extends Error {
 		this.code = settings.code || errorCodes.UNKNOWN;
 		this.status = settings.status;
 		this.meta = settings.meta;
+		this.url = settings.url;
 	}
 }
 

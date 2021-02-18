@@ -1,0 +1,4 @@
+{
+    "host": "http://localhost:3000",
+    "feedUrl": "https://rss.acast.com/varvet"
+}

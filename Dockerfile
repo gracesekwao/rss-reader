@@ -8,6 +8,7 @@ COPY index.js /index.js
 RUN npm install --production
 
 COPY src/ ./src
+COPY settings.json ./
 
 EXPOSE 3000
 
