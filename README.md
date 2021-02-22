@@ -15,7 +15,7 @@ Alternatively, use nodemon index.js so that you don't have to start the server a
 run the command npm test
 
 # Things to improve the application
-- The checksum generator does a HEAD request to get the headers object and from there we can get the content-MD5 which is the checksum for the file. This would depend on a server if they provide this value or not. It is impossible to download the files and then calculate the hash from that since the files are quite large and there is many of them so if I had more time I would have spent designing a solution for that in order to get the real checksum value.
+- The checksum generator uses a stream to get the data, read it then calculate the checksum. Since the files are quite large then it takes longer to process these files. At the moment I have capped the data in 15 items so as to show a response. If I had more time, I would find a way to chunk the data so as to improve performance and send it back to the client faster
 
 - Another thing to improve is adding integration tests to test if the request to read the MP3 files succeeds  and more unit tests for other functions.
 

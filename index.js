@@ -8,7 +8,7 @@ const { getPaginatedData } = require('./src/helpers/getPaginatedData');
 
 app.get('/episodes', async (req, res) => {
     const allEpisodes = await GetEpisodes();
-    const response  = await getPaginatedData(req, allEpisodes)
+    const response  = await getPaginatedData(req, allEpisodes);
     res.send(response);
 });
 

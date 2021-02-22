@@ -9,16 +9,16 @@ module.exports = async () => {
     
     try {
         const items = await getFeed();
-        const response = await items.map((item) => {
-            const episodeObj = {};
-            episodeObj.title = _.get(item, 'title', '');
-            episodeObj.url= _.get(item, 'link', '');
-            const enclosureUrl = _.get(item, 'enclosure.url');
-            episodeObj.checkSum = enclosureUrl ? checkSumGenerator(enclosureUrl) : null;
-            return episodeObj;
-        });
+        const shallow = items.slice(0,15);
 
-        return response;
+        const episodes = await Promise.all(
+            shallow.map(async item => ({
+                title: _.get(item, 'title', ''),
+                link: _.get(item, 'link', ''),
+                checksum: await checkSumGenerator(_.get(item, 'enclosure.url')),
+            }))
+        );
+        return episodes;
 
     } catch(error) {
         const customError = new CustomError({
